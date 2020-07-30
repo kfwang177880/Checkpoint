@@ -139,15 +139,16 @@ THE FIBONACCI SEQUENCE STARTS WITH 1 AND 1 AND THEN THE NEXT NUMBER IS THE ADDIT
 
 
 */
-let i = n
-let arr = [0,1]
+
 function fibonacci(n) {
   // CODE HERE
-  if (num < 0) return arr[7]
-  arr.push(arr[i - n] + arr[i - n +1 ])
-
-  return fib(n-1)
-  
+  if (n = 1) return 1
+  if (n = 2) return 1
+  let output = 1 + 1
+  let prv = 1 
+  for (var i = 3; i <= n; i++) {
+    
+  }
 }
 
 console.log(fibonacci(5));
