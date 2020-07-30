@@ -40,7 +40,8 @@ pushTrue([1,2,3]) ===> [1, 2, 3, 'last element']
 
 function pushString(arr) {
   // CODE HERE
-  console.log(arr);
+  arr[arr.length] = 'last element'
+  return arr
 }
 
 /*
@@ -59,6 +60,8 @@ mutateZeroElem([1,2,3]) ===> [1, 2, 3, true]
 
 function push(array, value) {
   // CODE HERE
+  array[array.length] = value
+  return array
 }
 
 /*
@@ -81,6 +84,9 @@ true
 
 function printElements(array) {
   // CODE HERE
+  for (var i = 0; i < array.length; i++) {
+    console.log(array[i])
+  }
 }
 
 /*
@@ -110,6 +116,21 @@ unique([1,2,3,2,3,2]) ===> [1, 2, 3];
 
 function unique(array) {
   // CODE HERE
+  var unique = []
+  for (var i = 0; i < array.length; i++) {
+    let newval = true
+    let current = array[i]
+    for (var j = 0; j < unique.length; j++) {
+      if (current === unique[j]) {
+        newval = false
+        break
+      } 
+    }
+    if (newval) {
+      unique.push(current)
+    }
+  }
+  return unique
 }
 
 /*
@@ -125,7 +146,18 @@ HINT USE AN INNER FOR-LOOP
 */
 
 function compare(array1, array2) {
-  // CODE HERE
+  
+  if (array1.length !== array2.length) {
+    return false
+  } else {
+    let match = true
+    for (var i = 0; i < array1.length; i++) {
+      if (array1[i] !== array2[i]) {
+        return false
+      }
+    }
+    return true
+  }
 }
 
 /*
@@ -142,6 +174,15 @@ compareArrays([1, 2, 3, 4], [1, 2]) ====> [1, 2]
 
 function compareArrays(array1, array2) {
   // CODE HERE
+  let outarr = []
+  for (var i = 0 ; i < array1.length; i++) {
+    for (var j = 0; j < array2.length; j++) {
+      if (array1[i] === array2[j]) {
+         outarr.push(array1[i])
+      }
+    }
+  }
+  return outarr
 }
 
 /*
@@ -157,6 +198,20 @@ compareArraysOpposite([1,2,3,4], [1,3]) ===> [2, 4]
 
 function compareArraysOpposite(array1, array2) {
   // CODE HERE
+  let outarr = []
+  for (var i = 0 ; i < array1.length; i++) {
+    let match = true
+    for (var j = 0; j < array2.length; j++) {
+      if (array1[i] === array2[j]) {
+         match = false
+         break
+      }
+    }
+    if (match) {
+      outarr.push(array1[i])
+    }
+  }
+  return outarr
 }
 
 /*
@@ -181,6 +236,7 @@ retrieveValue(twoDimentionArray, 3, 1) ===> 1
 */
 
 function retrieveValue(arr, row, col) {
+   return arr[row][col]
   // CODE HERE
 }
 
@@ -212,6 +268,14 @@ createTwoDArray(3, 5) ===> [
 
 function createTwoDArray(row, col) {
   // CODE HERE
+  let outarr = []
+  for (var i = 0; i < row; i++) {
+    outarr.push([0])
+    for (var j = 0; j < col; j++) {
+      outarr[i][j] = 0
+    }
+  }
+  return outarr
 }
 
 /*
