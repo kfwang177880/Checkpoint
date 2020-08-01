@@ -20,6 +20,7 @@ function higherOrder(callback) {
   console.log('hello world')
 }
 
+var callback
 /*
 QUESTION 2
 
@@ -29,9 +30,11 @@ CREATE A FUNCTION ACCEPTS ONE ARGUMENT, A CALLBACK THAT RETURNS THE RETURN VALUE
 
 function q2(callback) {
   // CODE HERE
-  func()
-}
+    return ('return as a callback')
+  }
 
+
+q2
 /*
 QUESTION 3
 
@@ -42,7 +45,10 @@ USE A FOR-LOOP
 */
 
 function forEach(array, callback) {
-  // CODE HERE
+  
+  for (var i = 0; i < array.length; i++) {
+    callback(array[i], i)
+  }
 }
 
 /*
@@ -59,6 +65,11 @@ USE A FOR-LOOP
 
 function map(array, callback) {
   // CODE HERE
+  let outArr = []
+  for (var i = 0; i < array.length; i++) {
+    outArr.push(callback(array[i]))
+  }
+  return outArr 
 }
 
 /*
