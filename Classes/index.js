@@ -22,6 +22,7 @@ IT ALSO HAS ANOTHER PROPERTY type THAT EQUALS THE STRING 'parent class'
 function MyFirstClass(name) {
   // CODE HERE
   this.name = name;
+  this.type = 'parent class';
 }
 
 /*
@@ -31,7 +32,9 @@ USING THE PROTOTYPE CHAIN, ADD THE METHOD getNumberOfChars THAT JUST RETURNS THE
 
 */
 
-// CODE HERE
+MyFirstClass.prototype.getNumberOfChars = function () {  // add Method
+   return Object.values(this.name).length
+}
 
 /*
 QUESTION 3
@@ -43,8 +46,8 @@ REMEMBER TO USE THE METHOD call AND FEED this AS THE FIRST ARGUMENT
 
 */
 
-function MySecondClass(name) {
-  // CODE HERE
+function MySecondClass(name, type) {
+  MyFirstClass.call(this, name, type)
 }
 
 /*
@@ -55,9 +58,10 @@ MAKE IT THAT MySecondClass INHERITS METHODS FROM MyFirstClass
 YOU MAY WANT TO LINK THE PROTOTYPICAL CHAINS AND USE Object.create
 
 
+
 */
 
-// CODE HERE
+MySecondClass.prototype.getNumberOfChars = Object.create(MyFirstClass);
 
 /*
 QUESTION 5
