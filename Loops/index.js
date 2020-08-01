@@ -140,18 +140,21 @@ THE FIBONACCI SEQUENCE STARTS WITH 1 AND 1 AND THEN THE NEXT NUMBER IS THE ADDIT
 
 */
 
+
 function fibonacci(n) {
-  // CODE HERE
-  if (n = 1) return 1
-  if (n = 2) return 1
-  let output = 1 + 1
-  let prv = 1 
-  for (var i = 3; i <= n; i++) {
-    
+  arr = [1,1]
+  if (n === 1) return 1
+  if (n === 2) return 1
+  i = n - 2
+  num -= 2
+  function fib(num) {
+    if (num < 0) return arr[i]
+    arr.push(arr[i - num] + arr[i - num +1 ])
+
+    return fib(num-1)
   }
 }
 
-console.log(fibonacci(5));
 
 /*
 TEST SECTION, PLEASE DO NOT TOUCH

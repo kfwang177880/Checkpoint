@@ -20,7 +20,11 @@ function higherOrder(callback) {
   console.log('hello world')
 }
 
-var callback
+invokeCallbackFunc = function(func){
+  func()
+}
+invokeCallbackFunc(higherOrder)
+
 /*
 QUESTION 2
 
@@ -33,8 +37,8 @@ function q2(callback) {
     return ('return as a callback')
   }
 
+let ansQ2 = q2(func)
 
-q2
 /*
 QUESTION 3
 
