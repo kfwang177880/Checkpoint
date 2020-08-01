@@ -63,6 +63,10 @@ YOU MAY WANT TO LINK THE PROTOTYPICAL CHAINS AND USE Object.create
 
 MySecondClass.prototype.getNumberOfChars = Object.create(MyFirstClass);
 
+MySecondClass.prototype.getNumberOfChars = function () {  // add Method
+  return Object.values(this.name).length
+}
+
 /*
 QUESTION 5
 
